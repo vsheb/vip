@@ -1,5 +1,6 @@
-#Introduction
+# VIP
 
+## Introduction
 VIP (VHDL Interface Plug-in) is a script for VIM text editor which provides some facilities to copy paste entities, components and instances of components.
 
 For example you can copy the component :
@@ -32,19 +33,16 @@ VIP can :
         an entity
         a component
         an instance
+        a Verilog HDL instance
 
     copy a component and paste it as
         an entity
         a component
         an instance
+        a Verilog HDL instance
 
     copy a instance and paste it as
         an instance (with auto-incrementation of the suffix number)
 ```
 
 VIP tries to respect your indentation as much as possible (spaces, tabs, spaces + tabs).
-It can work with many different styles of writing entities, components and instances but not all of them. See documentation.
-
-#Download :
-
-[VIM scripts / VIP] (http://www.vim.org/scripts/script.php?script_id=3335)
