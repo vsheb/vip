@@ -654,72 +654,70 @@ for s:inc in range(2, &shiftwidth)
     let s:indChar = s:indChar.s:indChar
 endfor
 
-if !exists("g:skipMappings_VIP")
-    """""""""""""" Yank
-    if !hasmapto('<Plug>SpecialVHDLAction')
-        map <unique> <leader>y <Plug>SpecialVHDLYank
-    endif
-    noremap <unique> <script> <Plug>SpecialVHDLYank <SID>Yank
-    noremap <SID>Yank :call <SID>Action("yank")<CR>
+"""""""""""""" Yank
+if !hasmapto('<Plug>SpecialVHDLAction') && !exists("g:skipMappings_VIP")
+    map <unique> <leader>y <Plug>SpecialVHDLYank
+endif
+noremap <unique> <script> <Plug>SpecialVHDLYank <SID>Yank
+noremap <SID>Yank :call <SID>Action("yank")<CR>
 
-    if !exists(":Viy")
-        command -nargs=0 Viy :call s:Action("yank")
-    endif
+if !exists(":Viy")
+    command -nargs=0 Viy :call s:Action("yank")
+endif
 
-    """""""""""""" Paste as same
-    if !hasmapto('<Plug>SpecialVHDLPaste')
-        map <unique> <leader>p <Plug>SpecialVHDLPaste
-    endif
-    noremap <unique> <script> <Plug>SpecialVHDLPaste <SID>Paste
-    noremap <SID>Paste :call <SID>Action("paste")<CR>
+"""""""""""""" Paste as same
+if !hasmapto('<Plug>SpecialVHDLPaste') && !exists("g:skipMappings_VIP")
+    map <unique> <leader>p <Plug>SpecialVHDLPaste
+endif
+noremap <unique> <script> <Plug>SpecialVHDLPaste <SID>Paste
+noremap <SID>Paste :call <SID>Action("paste")<CR>
 
-    if !exists(":Vip")
-        command -nargs=0 Vip :call s:Action("paste")
-    endif
+if !exists(":Vip")
+    command -nargs=0 Vip :call s:Action("paste")
+endif
 
-    """"""""""""""" Paste as entity
-    if !hasmapto('<Plug>SpecialVHDLPasteEntity')
-        map <unique> <leader>e <Plug>SpecialVHDLPasteEntity
-    endif
-    noremap <unique> <script> <Plug>SpecialVHDLPasteEntity <SID>PasteEntity
-    noremap <SID>PasteEntity :call <SID>Action("entity")<CR>
+""""""""""""""" Paste as entity
+if !hasmapto('<Plug>SpecialVHDLPasteEntity') && !exists("g:skipMappings_VIP")
+    map <unique> <leader>e <Plug>SpecialVHDLPasteEntity
+endif
+noremap <unique> <script> <Plug>SpecialVHDLPasteEntity <SID>PasteEntity
+noremap <SID>PasteEntity :call <SID>Action("entity")<CR>
 
-    if !exists(":Vie")
-        command -nargs=0 Vie :call s:Action("entity")
-    endif
+if !exists(":Vie")
+    command -nargs=0 Vie :call s:Action("entity")
+endif
 
-    """"""""""""""" Paste as component
-    if !hasmapto('<Plug>SpecialVHDLPasteComponent')
-        map <unique> <leader>c <Plug>SpecialVHDLPasteComponent
-    endif
-    noremap <unique> <script> <Plug>SpecialVHDLPasteComponent <SID>PasteComponent
-    noremap <SID>PasteComponent :call <SID>Action("component")<CR>
+""""""""""""""" Paste as component
+if !hasmapto('<Plug>SpecialVHDLPasteComponent') && !exists("g:skipMappings_VIP")
+    map <unique> <leader>c <Plug>SpecialVHDLPasteComponent
+endif
+noremap <unique> <script> <Plug>SpecialVHDLPasteComponent <SID>PasteComponent
+noremap <SID>PasteComponent :call <SID>Action("component")<CR>
 
-    if !exists(":Vic")
-        command -nargs=0 Vic :call s:Action("component")
-    endif
+if !exists(":Vic")
+    command -nargs=0 Vic :call s:Action("component")
+endif
 
-    """"""""""""""" Paste as instance
-    if !hasmapto('<Plug>SpecialVHDLPasteInstance')
-        map <unique> <leader>i <Plug>SpecialVHDLPasteInstance
-    endif
-    noremap <unique> <script> <Plug>SpecialVHDLPasteInstance <SID>PasteInstance
-    noremap <SID>Paste Instance:call <SID>Action("instance")<CR>
+""""""""""""""" Paste as instance
+if !hasmapto('<Plug>SpecialVHDLPasteInstance') && !exists("g:skipMappings_VIP")
+    map <unique> <leader>i <Plug>SpecialVHDLPasteInstance
+endif
+noremap <unique> <script> <Plug>SpecialVHDLPasteInstance <SID>PasteInstance
+noremap <SID>Paste Instance:call <SID>Action("instance")<CR>
 
-    if !exists(":Vii")
-        command -nargs=0 Vii :call s:Action("instance")
-    endif
+if !exists(":Vii")
+    command -nargs=0 Vii :call s:Action("instance")
+endif
 
-    """"""""""""""" Paste as vinstance
-    if !hasmapto('<Plug>SpecialVHDLPasteVinstance')
-        map <unique> <leader>m <Plug>SpecialVHDLPasteVinstance
-    endif
-    noremap <unique> <script> <Plug>SpecialVHDLPasteVinstance <SID>PasteVinstance
-    noremap <SID>Paste Vinstance:call <SID>Action("vinstance")<CR>
+""""""""""""""" Paste as vinstance
+if !hasmapto('<Plug>SpecialVHDLPasteVinstance') && !exists("g:skipMappings_VIP")
+    map <unique> <leader>m <Plug>SpecialVHDLPasteVinstance
+endif
+noremap <unique> <script> <Plug>SpecialVHDLPasteVinstance <SID>PasteVinstance
+noremap <SID>Paste Vinstance:call <SID>Action("vinstance")<CR>
 
-    if !exists(":Vim")
-        command -nargs=0 Viv :call s:Action("vinstance")
-    endif
+if !exists(":Vim")
+    command -nargs=0 Viv :call s:Action("vinstance")
 endif
 
 "vim:ff=unix
