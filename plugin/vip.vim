@@ -1,8 +1,8 @@
 " VIP : VHDL Interface Plugin
 " File:        vip.vim
 " Version:     1.4.0
-" Last Change: feb. 01 2016
-" Author:      Jean-Paul Ricaud, Franz Hechfellner
+" Last Change: Jan 16, 2021
+" Author:      Jean-Paul Ricaud, Franz Hechfellner, Jonathan Meldrum
 " License:     LGPLv3
 " Description: Copy entity (or component) and paste as component (or entity)
 "              or instance of component
@@ -17,7 +17,7 @@ if !exists("g:instPrefix_VIP")
     let g:instPrefix_VIP = ""             " the prefix added at the beginning of an instance name
 endif
 if !exists("g:instSuffix_VIP")
-    let g:instSuffix_VIP = "_"            " the suffix added at the end of an instance name
+    let g:instSuffix_VIP = "_u"            " the suffix added at the end of an instance name
 endif
 if !exists("g:sigPrefix_VIP")
     let g:sigPrefix_VIP = "s_"            " the prefix added to signals names
@@ -709,15 +709,14 @@ if !exists(":Vii")
     command -nargs=0 Vii :call s:Action("instance")
 endif
 
-""""""""""""""" Paste as vinstance
+""""""""""""""" Paste as verilog instance
 if !hasmapto('<Plug>SpecialVHDLPasteVinstance') && !exists("g:skipMappings_VIP")
-    map <unique> <leader>m <Plug>SpecialVHDLPasteVinstance
+    map <unique> <leader>v <Plug>SpecialVHDLPasteVinstance
 endif
 noremap <unique> <script> <Plug>SpecialVHDLPasteVinstance <SID>PasteVinstance
 noremap <SID>Paste Vinstance:call <SID>Action("vinstance")<CR>
 
-if !exists(":Vim")
+if !exists(":Viv")
     command -nargs=0 Viv :call s:Action("vinstance")
 endif
 
-"vim:ff=unix
