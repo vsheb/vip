@@ -216,7 +216,7 @@ function s:PasteECI(instanceNumb, instPrefix, instSuffix, sigPrefix, yankBlock)
     let instanceName = split(a:yankBlock[0])
     let indentPos = match(a:yankBlock[0], "[a-zA-Z]") " first char of an identifiers must be a letter
     let indentVal = strpart(a:yankBlock[0], 0, indentPos)
-    let instanceBlock += [indentVal.a:instPrefix.instanceName[1].a:instSuffix.a:instanceNumb." : ".instanceName[1]]
+    let instanceBlock += [indentVal.a:instPrefix.instanceName[1].a:instSuffix.a:instanceNumb." : entity work.".instanceName[1]]
 
     try
         " Get signals inside entity / component
@@ -711,7 +711,7 @@ endif
 
 """"""""""""""" Paste as verilog instance
 if !hasmapto('<Plug>SpecialVHDLPasteVinstance') && !exists("g:skipMappings_VIP")
-    map <unique> <leader>v <Plug>SpecialVHDLPasteVinstance
+    map <unique> <leader>V <Plug>SpecialVHDLPasteVinstance
 endif
 noremap <unique> <script> <Plug>SpecialVHDLPasteVinstance <SID>PasteVinstance
 noremap <SID>Paste Vinstance:call <SID>Action("vinstance")<CR>
