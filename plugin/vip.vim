@@ -656,7 +656,7 @@ endfor
 
 """""""""""""" Yank
 if !hasmapto('<Plug>SpecialVHDLAction') && !exists("g:skipMappings_VIP")
-    map <unique> <leader><leader>y <Plug>SpecialVHDLYank
+    map <unique> <leader><leader>Y <Plug>SpecialVHDLYank
 endif
 noremap <unique> <script> <Plug>SpecialVHDLYank <SID>Yank
 noremap <SID>Yank :call <SID>Action("yank")<CR>
@@ -667,7 +667,7 @@ endif
 
 """""""""""""" Paste as same
 if !hasmapto('<Plug>SpecialVHDLPaste') && !exists("g:skipMappings_VIP")
-    map <unique> <leader><leader>p <Plug>SpecialVHDLPaste
+    map <unique> <leader><leader>P <Plug>SpecialVHDLPaste
 endif
 noremap <unique> <script> <Plug>SpecialVHDLPaste <SID>Paste
 noremap <SID>Paste :call <SID>Action("paste")<CR>
