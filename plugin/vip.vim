@@ -656,7 +656,7 @@ endfor
 
 """""""""""""" Yank
 if !hasmapto('<Plug>SpecialVHDLAction') && !exists("g:skipMappings_VIP")
-    map <unique> <leader>y <Plug>SpecialVHDLYank
+    map <unique> <leader><leader>y <Plug>SpecialVHDLYank
 endif
 noremap <unique> <script> <Plug>SpecialVHDLYank <SID>Yank
 noremap <SID>Yank :call <SID>Action("yank")<CR>
@@ -667,7 +667,7 @@ endif
 
 """""""""""""" Paste as same
 if !hasmapto('<Plug>SpecialVHDLPaste') && !exists("g:skipMappings_VIP")
-    map <unique> <leader>p <Plug>SpecialVHDLPaste
+    map <unique> <leader><leader>p <Plug>SpecialVHDLPaste
 endif
 noremap <unique> <script> <Plug>SpecialVHDLPaste <SID>Paste
 noremap <SID>Paste :call <SID>Action("paste")<CR>
@@ -678,7 +678,7 @@ endif
 
 """"""""""""""" Paste as entity
 if !hasmapto('<Plug>SpecialVHDLPasteEntity') && !exists("g:skipMappings_VIP")
-    map <unique> <leader>e <Plug>SpecialVHDLPasteEntity
+    map <unique> <leader><leader>e <Plug>SpecialVHDLPasteEntity
 endif
 noremap <unique> <script> <Plug>SpecialVHDLPasteEntity <SID>PasteEntity
 noremap <SID>PasteEntity :call <SID>Action("entity")<CR>
@@ -689,7 +689,7 @@ endif
 
 """"""""""""""" Paste as component
 if !hasmapto('<Plug>SpecialVHDLPasteComponent') && !exists("g:skipMappings_VIP")
-    map <unique> <leader>c <Plug>SpecialVHDLPasteComponent
+    map <unique> <leader><leader>c <Plug>SpecialVHDLPasteComponent
 endif
 noremap <unique> <script> <Plug>SpecialVHDLPasteComponent <SID>PasteComponent
 noremap <SID>PasteComponent :call <SID>Action("component")<CR>
@@ -700,7 +700,7 @@ endif
 
 """"""""""""""" Paste as instance
 if !hasmapto('<Plug>SpecialVHDLPasteInstance') && !exists("g:skipMappings_VIP")
-    map <unique> <leader>i <Plug>SpecialVHDLPasteInstance
+    map <unique> <leader><leader>i <Plug>SpecialVHDLPasteInstance
 endif
 noremap <unique> <script> <Plug>SpecialVHDLPasteInstance <SID>PasteInstance
 noremap <SID>Paste Instance:call <SID>Action("instance")<CR>
@@ -711,7 +711,7 @@ endif
 
 """"""""""""""" Paste as verilog instance
 if !hasmapto('<Plug>SpecialVHDLPasteVinstance') && !exists("g:skipMappings_VIP")
-    map <unique> <leader>V <Plug>SpecialVHDLPasteVinstance
+    map <unique> <leader><leader>V <Plug>SpecialVHDLPasteVinstance
 endif
 noremap <unique> <script> <Plug>SpecialVHDLPasteVinstance <SID>PasteVinstance
 noremap <SID>Paste Vinstance:call <SID>Action("vinstance")<CR>
